@@ -34,8 +34,6 @@ This work presents NebulaTextures, a plugin that addresses this gap by offering 
 
 # Astronomical Context
 
-Accurately placing astronomical images in a virtual sky relies on celestial coordinates, Right Ascension (RA) and Declination (Dec). Many images include WCS (World Coordinate System) data in their FITS headers, mapping pixel positions to sky coordinates. To obtain this mapping when absent, **astrometric registration** (or plate-solving) analyzes star patterns in the image and matches them to catalogs. The plugin automates this process via the [Astrometry.net](https://astrometry.net/) service, enabling precise sky alignment for user-submitted images.
-
 # System Design
 
 NebulaTextures integrates with Stellarium using its established plugin infrastructure. The plugin's design is modular, with key components handling specific tasks:
