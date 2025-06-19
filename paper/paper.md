@@ -40,21 +40,6 @@ Accurately placing astronomical images in a virtual sky relies on celestial coor
 
 NebulaTextures integrates with Stellarium using its established plugin infrastructure. The plugin's design is modular, with key components handling specific tasks:
 
-| **Component**          | **Purpose**                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| `NebulaTextures`       | Core plugin controller, manages hooks, rendering calls, and state |
-| `NebulaTexturesDialog` | Provides the graphical user interface for user interaction, preview, and configuration |
-| `PlateSolver`          | Handles communication with the Astrometry.net API, submitting images and processing results |
-| `SkyCoords`            | Manages WCS transformations and the logic for projecting pixel coordinates to celestial positions |
-| `TextureConfigManager` | Responsible for parsing and managing the JSON-based configuration files that define texture groups and properties |
-| `TileManager`          | Loads, blends, and displays textures using Stellarium’s internal tile system for efficient rendering |
-
-
-
-The typical workflow for a user integrating an image is as follows chart:
-
-![Figure 1: User image integration workflow of NebulaTextures Plugin](flowchart.pdf)
-
 # Astrometric Algorithms
 
 
