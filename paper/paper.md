@@ -132,12 +132,6 @@ This method is more robust for large fields or distorted projections compared to
 
 *NebulaTextures* simplifies the integration of custom DSO imagery into Stellarium, enabling tailored sky visualizations across multiple domains:
 
-* **Education:** Facilitates display of student astrophotography, concept-specific overlays, and custom guided tours aligned with curricula.
-
-* **Outreach:** Enhances planetarium shows and public programs with local imagery, historical charts, or cultural sky maps for more engaging, audience-specific content.
-
-* **Research:** Supports visual comparison of observations with models, planning of observations, and presentation of preliminary results. Plate-solving via Astrometry.net streamlines image alignment and evaluation.
-
 The plugin encourages community contributions, fostering a shared library of solved and formatted sky textures within Stellarium.
 
 # Acknowledgements
