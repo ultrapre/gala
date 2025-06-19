@@ -59,78 +59,16 @@ The typical workflow for a user integrating an image is as follows chart:
 
 # Astrometric Algorithms
 
-## Astrometric Projection: Pixel-to-Celestial Mapping
-
-NebulaTextures implements standard TAN (gnomonic) projection to convert pixel coordinates (X,Y) into celestial coordinates (α,δ):
-
-1. Intermediate Plane Coordinates:
-
-$$
-\xi = CD_{1,1}(X - CRPIX_1) + CD_{1,2}(Y - CRPIX_2)
-$$
-
-$$
-\eta = CD_{2,1}(X - CRPIX_1) + CD_{2,2}(Y - CRPIX_2)
-$$
-
-   where $CRPIX_1, CRPIX_2$ are the reference pixel coordinates and $CD_{i,j}$ are the coordinate transformation matrix elements.
-
-2. Projection Geometry (for TAN projection):
-
-$$
-r = \sqrt{\xi^2 + \eta^2}, \quad c = \arctan(r)
-$$
-
-3. Declination:
-
-$$
-\sin(\delta) = \cos(c)\sin(\delta_0) + \frac{\eta\sin(c)\cos(\delta_0)}{r}
-$$
-
-$$
-\delta = \arcsin(\text{clamp}(\sin(\delta), -1, 1))
-$$
-
-4. Right Ascension:
-
-$$
-\Delta\alpha = \text{atan2}(\xi\sin(c), r\cos(\delta_0)\cos(c) - \eta\sin(\delta_0)\sin(c))
-$$
-
-$$
-\alpha = (\alpha_0 + \Delta\alpha) \bmod 2\pi
-$$
-
-   where $(\alpha_0, \delta_0)$ are the celestial coordinates of the reference pixel (usually the image center) and atan2 is the two-argument arctangent.
-
-5. Normalization: RA is typically expressed in degrees in the \[0, 360) interval, and Dec in degrees in the \[−90, 90] interval.
-
-## Estimating Image Center from Corner Coordinates
-
-When WCS data is unavailable, the image center can be estimated from its four corner coordinates $(\alpha_i, \delta_i)$ by averaging their unit vectors:
-
-1. **Compute and average unit vectors:**
-
-$$
-(\bar{x}, \bar{y}, \bar{z}) = \frac{1}{4} \sum_{i=1}^4 \left( \cos \delta_i \cos \alpha_i,\, \cos \delta_i \sin \alpha_i,\, \sin \delta_i \right)
-$$
-
-2. **Convert back to spherical coordinates:**
-
-$$
-RA = \text{atan2}(\bar{y}, \bar{x}) \times \frac{180}{\pi} \bmod 360
-$$
-
-$$
-Dec = \arcsin\left( \frac{\bar{z}}{\sqrt{\bar{x}^2 + \bar{y}^2 + \bar{z}^2}} \right) \times \frac{180}{\pi}
-$$
-
-This method is more robust for large fields or distorted projections compared to simple arithmetic averaging of RA and Dec.
-
 
 # Applications
 
 *NebulaTextures* simplifies the integration of custom DSO imagery into Stellarium, enabling tailored sky visualizations across multiple domains:
+
+* **Education:** Facilitates display of student astrophotography, concept-specific overlays, and custom guided tours aligned with curricula.
+
+* **Outreach:** Enhances planetarium shows and public programs with local imagery, historical charts, or cultural sky maps for more engaging, audience-specific content.
+
+* **Research:** Supports visual comparison of observations with models, planning of observations, and presentation of preliminary results. Plate-solving via Astrometry.net streamlines image alignment and evaluation.
 
 The plugin encourages community contributions, fostering a shared library of solved and formatted sky textures within Stellarium.
 
