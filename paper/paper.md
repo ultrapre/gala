@@ -26,8 +26,6 @@ bibliography: paper.bib
 
 # Summary
 
-*NebulaTextures* is a powerful and extensible open-source plugin for the Stellarium planetarium software. It dramatically simplifies and enriches the experience of visualizing and integrating deep-sky object (DSO) imagery provided by users. These images may include astrophotographs taken by amateur astronomers, hand-drawn or digitally illustrated astronomical sketches, or artistic renderings of celestial phenomena. The plugin enables users to insert their personalized visual content into Stellarium’s virtual sky in a precise and astrometrically accurate manner.
-
 # Statement of Need
 
 While Stellarium provides an expansive and curated catalog of built-in nebula and DSO textures, it lacks native support for user-defined, dynamically inserted visual assets. The manual process of aligning astrophotographs or drawings to celestial coordinates is technically demanding and error-prone, with limited user interface support. As a result, even experienced users often refrain from customizing their Stellarium installations.
@@ -62,15 +60,6 @@ The typical workflow for a user integrating an image is as follows chart:
 
 # Applications
 
-*NebulaTextures* simplifies the integration of custom DSO imagery into Stellarium, enabling tailored sky visualizations across multiple domains:
-
-* **Education:** Facilitates display of student astrophotography, concept-specific overlays, and custom guided tours aligned with curricula.
-
-* **Outreach:** Enhances planetarium shows and public programs with local imagery, historical charts, or cultural sky maps for more engaging, audience-specific content.
-
-* **Research:** Supports visual comparison of observations with models, planning of observations, and presentation of preliminary results. Plate-solving via Astrometry.net streamlines image alignment and evaluation.
-
-The plugin encourages community contributions, fostering a shared library of solved and formatted sky textures within Stellarium.
 
 # Acknowledgements
 
